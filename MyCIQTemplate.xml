@@ -1,0 +1,32 @@
+<PnpConfig>
+	<PnpDetail>
+		<Hardware></Hardware>
+		<PnpLatitude></PnpLatitude>
+		<PnpLongitude></PnpLongitude>
+		<PnpLatLongRadius></PnpLatLongRadius>
+	</PnpDetail>
+	<eNBDetail>
+		<Name></Name>
+		<Site></Site>
+		<Region></Region>
+		<ENodeBID></ENodeBID>
+		<SystemDefaultProfile></SystemDefaultProfile>
+		<AdvancedConfigProfile></AdvancedConfigProfile>
+		<NetworkProfile></NetworkProfile>
+		<SyncProfile></SyncProfile>
+		<SecurityProfile></SecurityProfile>
+		<SonProfile></SonProfile>
+		<ManagementProfile></ManagementProfile>
+		<LteCell>
+			<CellID></CellID>
+			<TrackingAreaCode></TrackingAreaCode>
+			<PrachFreqOffset></PrachFreqOffset>
+			<RadioProfile></RadioProfile>
+			<MobilityProfile></MobilityProfile>
+		</LteCell>
+		<ControlIpAddress></ControlIpAddress>
+		<ControlSubnetMask></ControlSubnetMask>
+		<DataIpAddress></DataIpAddress>
+		<DataSubnetMask></DataSubnetMask>
+	</eNBDetail>
+</PnpConfig>
