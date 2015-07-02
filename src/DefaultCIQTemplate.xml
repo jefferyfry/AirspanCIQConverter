@@ -28,5 +28,27 @@
 		<ControlSubnetMask></ControlSubnetMask>
 		<DataIpAddress></DataIpAddress>
 		<DataSubnetMask></DataSubnetMask>
+		<IpRouteList>
+			<IpRoute>
+				<DestIpAddress></DestIpAddress>
+				<IpSubnetMask></IpSubnetMask>
+				<GatewayIpAddress></GatewayIpAddress>
+			</IpRoute>
+			<IpRoute>
+				<DestIpAddress></DestIpAddress>
+				<IpSubnetMask></IpSubnetMask>
+				<GatewayIpAddress></GatewayIpAddress>
+			</IpRoute>
+			<IpRoute>
+				<DestIpAddress></DestIpAddress>
+				<IpSubnetMask></IpSubnetMask>
+				<GatewayIpAddress></GatewayIpAddress>
+			</IpRoute>
+			<IpRoute>
+				<DestIpAddress></DestIpAddress>
+				<IpSubnetMask></IpSubnetMask>
+				<GatewayIpAddress></GatewayIpAddress>
+			</IpRoute>
+		</IpRouteList>
 	</eNBDetail>
 </PnpConfig>
