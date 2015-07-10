@@ -57,7 +57,7 @@ public class CIQConverter {
 		try {
 			if(listener!=null)
 				listener.start();
-			XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFSheet sheet = workbook.getSheet("PnpConfig");
 			int rows = sheet.getPhysicalNumberOfRows();
 			int cols = sheet.getRow(1).getPhysicalNumberOfCells();
 			XSSFRow headerRow = sheet.getRow(1);
@@ -68,6 +68,8 @@ public class CIQConverter {
 				try {
 					Element oneConfig = (Element)xmlTemplate.getDocumentElement().cloneNode(true);
 					XSSFRow ciqRow = sheet.getRow(row);
+					if(ciqRow==null)
+						continue;
 					for(int col=0;col<cols;col++){
 						String propertyName = headerRow.getCell(col).getStringCellValue();
 						Integer propertyIndex = propertyIndexCount.get(propertyName);
@@ -95,9 +97,6 @@ public class CIQConverter {
 						listener.exception(e);
 				}
 			}
-			
-			if(listener!=null)
-				listener.finished();
 		}
 		catch(Exception e){
 			if(listener!=null)
@@ -134,6 +133,10 @@ public class CIQConverter {
 		catch(Exception e){
 			if(listener!=null)
 				listener.exception(e);
+		}
+		finally {
+			if(listener!=null)
+				listener.finished();
 		}
 	}
 	

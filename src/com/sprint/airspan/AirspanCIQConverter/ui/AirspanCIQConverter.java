@@ -38,7 +38,6 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.border.Border;
 import javax.swing.filechooser.FileFilter;
-import javax.swing.plaf.ColorUIResource;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -52,7 +51,7 @@ public class AirspanCIQConverter extends JFrame implements WindowListener, Actio
 	
 	private Log log = LogFactory.getLog(AirspanCIQConverter.class);
 	
-	private String version = "1.0";
+	private String version = "1.1";
 	
 	private JFrame parent = this;
 	private JRadioButton defaultRadioButton = new JRadioButton("Default Template");
@@ -405,6 +404,7 @@ public class AirspanCIQConverter extends JFrame implements WindowListener, Actio
 		}
 		else if(source==defaultRadioButton){
 			disabledPanel.setEnabled(false);
+			button2.setEnabled(true);
 		}
 		else if(source==customRadioButton){
 			disabledPanel.setEnabled(true);
@@ -447,11 +447,9 @@ public class AirspanCIQConverter extends JFrame implements WindowListener, Actio
 	 */
 	@Override
 	public void finished() {
-		File outputfileDir = (new File(outputfile)).getParentFile();
 		try {
-			System.out.println("Open folder "+outputfileDir.getAbsolutePath());
 			if(Desktop.isDesktopSupported())
-				Desktop.getDesktop().open(outputfileDir);
+				Desktop.getDesktop().open(new File(outputfile));
 			else
 				System.out.println("Desktop not supported.");
 		} catch (IOException e) {
